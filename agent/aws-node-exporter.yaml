@@ -13,10 +13,10 @@ prometheus:
       scrape_configs:
         - job_name: aws-agent
           static_configs:
-            - targets: ['localhost:12345']
+            - targets: ['${AWSURL}:12345']
         - job_name: node-exporter/ec2-linux
           static_configs:
-            - targets: ['localhost:9100']
+            - targets: ['${AWSURL}:9100']
       remote_write:
         - url: ${GCURL}
           basic_auth:
@@ -26,10 +26,10 @@ prometheus:
       scrape_configs:
         - job_name: production-agent
           static_configs:
-            - targets: ['localhost:12345']
+            - targets: ['${AWSURL}:12345']
         - job_name: node-exporter/production-linux
           static_configs:
-            - targets: ['localhost:9100']
+            - targets: ['${AWSURL}:9100']
       remote_write:
         - url: ${GCURL}
           basic_auth:
@@ -39,10 +39,10 @@ prometheus:
       scrape_configs:
         - job_name: finance-agent
           static_configs:
-            - targets: ['localhost:12345']
+            - targets: ['${AWSURL}:12345']
         - job_name: node-exporter/finance-linux
           static_configs:
-            - targets: ['localhost:9100']
+            - targets: ['${AWSURL}:9100']
       remote_write:
         - url: ${GCURL2}
           basic_auth:
