@@ -14,7 +14,7 @@ prometheus:
         - job_name: aws-agent
           static_configs:
             - targets: ['localhost:12345']
-        - job_name: aws-node-exporter
+        - job_name: node-exporter/ec2-linux
           static_configs:
             - targets: ['localhost:9100']
       remote_write:
@@ -27,7 +27,7 @@ prometheus:
         - job_name: production-agent
           static_configs:
             - targets: ['localhost:12345']
-        - job_name: production-node-exporter
+        - job_name: node-exporter/production-linux
           static_configs:
             - targets: ['localhost:9100']
       remote_write:
@@ -40,7 +40,7 @@ prometheus:
         - job_name: finance-agent
           static_configs:
             - targets: ['localhost:12345']
-        - job_name: finance-node-exporter
+        - job_name: node-exporter/finance-linux
           static_configs:
             - targets: ['localhost:9100']
       remote_write:
